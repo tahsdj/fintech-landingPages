@@ -1,5 +1,5 @@
 (function(){
-
+  
 	// auto change page1 images
     let timer = setInterval(autoChangePages,3000)
     const $imgList = $("#page1 .backgroundImgList li")

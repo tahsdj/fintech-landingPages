@@ -185,8 +185,12 @@ header input[type=text]{
 	font-size: 24px;
 	color:#8C8C8C;
 }
+#page3 div{
+	display: inline-block;
+	margin-bottom: 30px;
+}
 #page3 .projectBox{
-	position: absolute;
+	position: relative;
 	top:200px;
 	left:50px;
 	width: 650px;
@@ -201,9 +205,8 @@ header input[type=text]{
 	left:50%;
 }
 #page3 .infoBox{
-	position: absolute;
-	margin-right:-300px;
-	right:23%;
+	position: relative;
+	left: 50px;
 	top:200px;
 	width:600px;
 	height:400px;
@@ -240,7 +243,7 @@ header input[type=text]{
 	font-size: 35px;
 	font-family: sans-serif;
 	text-align: left;
-	padding-top: 10px
+	padding-top: 10px;
 }
 #page3 .infoBox .infoList div a:second-child{
     padding-left:20px; 
