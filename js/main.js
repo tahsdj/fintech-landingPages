@@ -21,11 +21,22 @@
      timer = setInterval(autoChangePages,3000)
 	})
 
-    $("#page1>.right").click(function(){
+  $("#page1>.right").click(function(){
        clearInterval(timer)
        changeToNextPage()
        timer = setInterval(autoChangePages,3000)
 	})
+  
+  $(window).scroll(function(){
+    let scrollVal = $(this).scrollTop()
+    let speed = 200
+    if( scrollVal >= 500 ) {
+       $("#page2>.itemList>.item").each(function(){
+          $(this).fadeIn(speed)
+          speed+=1000
+       })
+    }
+  })
 
 function autoChangePages(){	
    const $currentItem = $('#page1 .pageList .current')
