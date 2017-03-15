@@ -29,7 +29,7 @@
   
   $(window).scroll(function(){
     let scrollVal = $(this).scrollTop()
-    let speed = 200
+    let speed = 50
     if( scrollVal >= 500 ) {
        $("#page2>.itemList>.item").each(function(){
           $(this).fadeIn(speed)
