@@ -1,5 +1,8 @@
-(function(){
-  
+
+
+//auto change picture on page1 & click function
+$(function(){
+
 	// auto change page1 images
     let timer = setInterval(autoChangePages,3000)
     const $imgList = $("#page1 .backgroundImgList li")
@@ -64,4 +67,43 @@ function action(index){
    $allItems.eq(index).addClass('current').siblings('.current').removeClass('current')
    $imgList.eq(index).addClass('current').siblings('.current').removeClass('current')	
 }
-}())
+})
+
+//login part
+$(function(){
+  let loginBoxOn = false
+  $("#page1,#page2,#page3").click(function(){
+    if(loginBoxOn) {
+      $(".login").css({"display":"none"})
+      $("#page1,#page2,#page3").css({"-webkit-filter":"brightness(1)"})
+    }
+  })
+  $(".infoRight > .loginBox").click(function(){
+       $(".login").css({"display":"initial"})
+       $("#page1,#page2,#page3").css({"-webkit-filter":"brightness(.3)"})
+       loginBoxOn = ($(".login").css("display") === "block") ? true : false
+    })
+})
+
+//login check
+$(function(){
+  $(".login>.userInfo>.loginButton").click(function(){
+     const mail =  $(".login >.userInfo > input[type=text]").val() || ''
+     const password = $(".login > .userInfo > input[type=password]").val() || ''
+       if ( mail === '' || password === '') {
+          const $span = $(".userInfo").find('.error')
+          if( $span.length === 0 ) {
+               $(".login > .userInfo > input[type=password]").after(
+                   '<span style = "color:red;" class = "error">email or password is invalid</span>'
+                  )
+             }
+       }else{
+          const $span = $(".userInfo").find('.error')
+          const $text = $(".login >.userInfo > input[type=text]")
+          const $password = $(".login > .userInfo > input[type=password]")
+          if( $span.length > 0 ) $span.remove()
+          $text.val('')
+          $password.val('')
+       }
+  })
+})

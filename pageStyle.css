@@ -188,19 +188,20 @@ header input[type=text]{
 #page3 div{
 	display: inline-block;
 	margin-bottom: 30px;
+	margin-right: 20px;
 }
 #page3 .projectBox{
 	position: relative;
 	top:200px;
 	left:50px;
-	width: 650px;
+	width: 700px;
 	height: 400px;
 	background-color: black;
 }
 #page3 .projectBox img{
 	position: absolute;
-	margin-left: -275px;
-	width:550px;
+	margin-left: -300px;
+	width:600px;
 	height: 400px;
 	left:50%;
 }
@@ -253,4 +254,89 @@ header input[type=text]{
    font-size: 20px;
    color:#BABAB8;
    top:10px;
+}
+
+.login {
+	position: fixed;
+	margin-right: -230px;
+	right:50%;
+	top:160px;
+	width: 460px;
+	height: 510px;
+	background-color: white;
+	z-index: 9999;
+	display: none;
+}
+.login div{
+	position: relative;
+}
+
+.login>.userInfo{
+	position: absolute;
+	width: 410px;
+	height: 450px;
+	margin-left: -210px;
+	left: 50%;
+	top: 30px;
+}
+.login>.userInfo input{
+	width: 410px;
+	height: 60px;
+	margin-bottom: 10px;
+	border-radius: 2px;
+	font-size: 18px;
+	font-family: Microsoft JhengHei;
+    border:solid 1px #D6D8DA;
+}
+.login>.userInfo input[type=submit]{
+	height: 60px;
+	border-radius: 4px;
+}
+
+.login>.userInfo input[type=submit]:hover{
+    -webkit-filter:opacity(.7);
+}
+
+.login > .userInfo .fbLogin {
+	background-color: #1A4999;
+	color: white;
+}
+
+.login > .userInfo .googleLogin{
+    background-color: white;
+    color:black;
+}
+
+.login > .userInfo > .fb > img{
+	position: absolute;
+	top:20px;
+	width:60px;
+	height: 60px;
+}
+
+.login > .userInfo > .google > img{
+	position: absolute;
+	top:20px;
+	left:30px;
+	width:26px;
+	height: 26px;
+}
+
+.login > .userInfo > .loginButton{
+    background-color: #EAEA54;
+}
+
+.login > .userInfo > .divideLine{
+	text-align: center;
+	width: 400px;
+	margin-bottom: 21px;
+}
+.login > .userInfo > .divideLine > span {
+   display: inline-block;
+   background-color: white;
+}
+
+.login > .userInfo > .divideLine > hr {
+   width: 100%;
+   margin-top: -10px;
 }

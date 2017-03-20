@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel = "stylesheet" type = "text/css" href="pageStyle.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 </head>
@@ -12,7 +13,7 @@
   	</div>
   	<div class = "infoRight">
       <input type = "text"><img src = "images/search.png">
-      <a>Log in</a> 
+      <a class = "loginBox">Log in</a> 
   	</div>
   </header>
   <div id = "page1">
@@ -67,22 +68,41 @@
         <img src = "images/projectImg.PNG">
      </div>
      <div class = "infoBox">
-      <progress value="8" max="10"></progress>
-      <div class = "infoList">
-	     <div>
-	       <a>$</a><a class = "money">10,239</a><br>
-	       <a class = "subTitle">Support</a>
-	     </div>
-	     <div>
-	       <a>2</a><br>
-	       <a class = "subTitle">Graphic Designer</a>
-	     </div>
-	     <div>
-	       <a>1</a><br>
-	       <a class = "subTitle">Space</a>
-	     </div>
-	 </div>   
+        <progress value="8" max="10"></progress>
+        <div class = "infoList">
+    	     <div>
+    	       <a>$</a><a class = "money">10,239</a><br>
+    	       <a class = "subTitle">Support</a>
+    	     </div>
+    	     <div>
+    	       <a>2</a><br>
+    	       <a class = "subTitle">Graphic Designer</a>
+    	     </div>
+    	     <div>
+    	       <a>1</a><br>
+    	       <a class = "subTitle">Space</a>
+    	     </div>
+  	    </div>   
      </div>
+  </div>
+  <div class = "login" >
+      <div class = "userInfo">
+        <div class = "fb">
+        　<img src = "images/fbLogo.png">
+          <input type="submit" class = "fbLogin" value = "使用Facebook登入帳號">
+        </div>
+        <div class = "google">
+          <img src = "images/googleLogo.png">
+          <input type="submit" class = "googleLogin" value = "使用Google登入帳號">
+        </div>
+        <div class = "divideLine">
+          <span>或</span>
+          <hr>
+        </div>
+        <input type="text" placeholder="電子郵件地址">
+        <input type="password" placeholder="密碼">
+        <input type="submit" class = "loginButton" value = "登入">
+      </div>
   </div>
   <script src = "js/main.js"></script>
 </body>
