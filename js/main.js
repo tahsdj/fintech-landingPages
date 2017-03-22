@@ -125,7 +125,7 @@ $(function(){
       const fbInfo = '<div class = "loginInfo fb">'+
                      '<header class = "fb"></header>'+
                      '<div>'+
-                     '<img src = "images/fb_profile.JPG">'+
+                     '<img src = "images/fb_profile.jpg">'+
                      '<p>Hi Mark, we will receive your all private information and only use these as commercial purpose.</p>'+
                      '</div>'+
                      '<input type = "submit" value = "confirm" onclick = "confirmAction()">'+
@@ -139,7 +139,7 @@ $(function(){
       const googleInfo = '<div class = "loginInfo google">'+
                      '<header class = "google"></header>'+
                      '<div>'+
-                     '<img src = "images/google_profile.JPG">'+
+                     '<img src = "images/google_profile.jpg">'+
                      '<p>Hi android, we will receive your all private information and only use these as commercial purpose.</p>'+
                      '</div>'+
                      '<input type = "submit" value = "confirm" onclick = "confirmAction(this)">'+
@@ -183,7 +183,7 @@ function confirmAction(e){
    $(".login").css({"display":"none"})
    $("#page1,#page2,#page3").css({"-webkit-filter":"brightness(1)"})
    $('header > .infoRight > a').css({"display":"none"})
-   $('header > .infoRight > .userProfile').addClass(''+loginType+'').attr("src",'images/'+loginType+'_profile.JPG')
+   $('header > .infoRight > .userProfile').addClass(''+loginType+'').attr("src",'images/'+loginType+'_profile.jpg')
    $('header > .infoRight > .userProfile').css({"display":"initial"})
    //append('<img class = "'+loginType+'" src = "images/'+loginType+'_profile.JPG" style = "'+imgCss+'">')
 }
