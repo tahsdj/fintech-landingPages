@@ -88,12 +88,14 @@ $(function(){
 //login check
 $(function(){
   let fb_google_loginOn = false
+  let errortype = 'invalid'
   $(".login>.userInfo>.loginButton").click(function(){
      const mail =  $(".login >.userInfo > input[type=text]").val() || ''
      const password = $(".login > .userInfo > input[type=password]").val() || ''
        if ( mail === '' || password === '') {
           const $span = $(".userInfo").find('.error')
-          if( $span.length === 0 ) {
+          if( $span.length === 0 || errortype === 'noexist') {
+               $span.remove()
                $(".login > .userInfo > input[type=password]").after(
                    '<span style = "color:red;" class = "error">email or password is invalid</span>'
                   )
@@ -102,7 +104,17 @@ $(function(){
           const $span = $(".userInfo").find('.error')
           const $text = $(".login >.userInfo > input[type=text]")
           const $password = $(".login > .userInfo > input[type=password]")
-          if( $span.length > 0 ) $span.remove()
+          if( $span.length !== 0 ) {
+            $span.remove()
+            $(".login > .userInfo > input[type=password]").after(
+                   '<span style = "color:red;" class = "error">this account does not exist</span>'
+                  )
+          }else{
+            $(".login > .userInfo > input[type=password]").after(
+                   '<span style = "color:red;" class = "error">this account does not exist</span>'
+                  )
+          }
+          errortype = 'noexist'
           $text.val('')
           $password.val('')
        }
