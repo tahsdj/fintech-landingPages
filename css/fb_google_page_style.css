@@ -1,0 +1,52 @@
+
+header{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:30px;
+}
+
+header.fb{
+	background-color: #1A4999;
+}
+
+header.google{
+	background-color: #F32A13;
+}
+
+div {
+   position: fixed;
+	top:50px;
+	margin-left: -200px;
+	left: 50%;
+	width: 400px;
+	height: 250px;
+	text-align: center;
+	line-height: 20px;
+}
+
+div > img{
+	position: absolute;
+	top:50px;
+	margin-left: -50px;
+	left: 50%;
+	width: 100px;
+	height: 120px;
+	border: solid 0.5px black;
+}
+
+div > p{
+   position: absolute;
+   bottom: 10px;
+}
+
+input {
+	position: fixed;
+	bottom: 20px;
+	right: 25px;
+	width: 60px;
+	height: 30px;
+	color: white;
+	background-color: #1A4999;
+}

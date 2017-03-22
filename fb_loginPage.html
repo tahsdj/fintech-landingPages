@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fb profile</title>
+	<link rel = "stylesheet" type = "text/css" href="css/fb_google_page_style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+</head>
+<body>
+  <header class = "fb"></header>
+  <div>
+   <img src = "images/mark_profile.JPG">
+   <p>Hi Mark, we will receive your all private information and use these as commercial purpose.</p>  
+  </div>
+  <input type = "submit" value = "confirm">
+  <script type="text/javascript">
+  	  $("input").click(function(){
+  	  	 console.log('asddd')
+  	  	 $('iframe',window.parent.document).remove()
+  	  })
+  </script> 
+</body>
+</html>

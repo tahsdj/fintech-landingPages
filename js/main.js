@@ -78,7 +78,7 @@ $(function(){
       $("#page1,#page2,#page3").css({"-webkit-filter":"brightness(1)"})
     }
   })
-  $(".infoRight > .loginBox").click(function(){
+  $(".infoRight .loginBox").click(function(){
        $(".login").css({"display":"initial"})
        $("#page1,#page2,#page3").css({"-webkit-filter":"brightness(.3)"})
        loginBoxOn = ($(".login").css("display") === "block") ? true : false
@@ -87,6 +87,7 @@ $(function(){
 
 //login check
 $(function(){
+  let fb_google_loginOn = false
   $(".login>.userInfo>.loginButton").click(function(){
      const mail =  $(".login >.userInfo > input[type=text]").val() || ''
      const password = $(".login > .userInfo > input[type=password]").val() || ''
@@ -106,4 +107,78 @@ $(function(){
           $password.val('')
        }
   })
+
+  //login with fb
+  $(".login .fb input").click(function(){
+      const fbInfo = '<div class = "loginInfo fb">'+
+                     '<header class = "fb"></header>'+
+                     '<div>'+
+                     '<img src = "images/fb_profile.JPG">'+
+                     '<p>Hi Mark, we will receive your all private information and only use these as commercial purpose.</p>'+
+                     '</div>'+
+                     '<input type = "submit" value = "confirm" onclick = "confirmAction()">'+
+                     '</div>'
+      $("body").append(fbInfo)
+      fb_google_loginOn = true
+  })
+
+  //login with google
+  $(".login .google input").click(function(){
+      const googleInfo = '<div class = "loginInfo google">'+
+                     '<header class = "google"></header>'+
+                     '<div>'+
+                     '<img src = "images/google_profile.JPG">'+
+                     '<p>Hi android, we will receive your all private information and only use these as commercial purpose.</p>'+
+                     '</div>'+
+                     '<input type = "submit" value = "confirm" onclick = "confirmAction(this)">'+
+                     '</div>'
+      $("body").append(googleInfo)
+      fb_google_loginOn = true
+  })
 })
+
+$(function(){
+  $("header > .infoRight > .userProfile ").hover(function(){
+      const className = $(this).attr('class').split(' ')[1]
+      const content = '<div class = "userHoverInfo">'+
+                      '<ul>'+
+                      '<li>個人資料</li>'+
+                      '<li>消費紀錄</li>'+
+                      '<li>個人專案</li>'+
+                      '<li onclick = "logOut()">登出</li>'+
+                      '</ul>'+
+                      '</div>'                  
+      $("body").append(content)
+  },function(){
+      $("div.userHoverInfo").hover(function(){
+          
+      },function(){
+           $("div.userHoverInfo").remove()
+      })    
+  })
+})
+
+//after click the confirm button in the login profile page
+function confirmAction(e){
+   const loginType = $('.loginInfo > header').prop('className')
+   console.log(loginType)
+   /*const imgCss = 'margin-left:39px;'+
+                  'border:solid 0.2px #CCCBCA;'+
+                  'float:left;'+
+                  'width:40px;'+
+                  'height:40px;'*/
+   $('.loginInfo').remove()
+   $(".login").css({"display":"none"})
+   $("#page1,#page2,#page3").css({"-webkit-filter":"brightness(1)"})
+   $('header > .infoRight > a').css({"display":"none"})
+   $('header > .infoRight > .userProfile').addClass(''+loginType+'').attr("src",'images/'+loginType+'_profile.JPG')
+   $('header > .infoRight > .userProfile').css({"display":"initial"})
+   //append('<img class = "'+loginType+'" src = "images/'+loginType+'_profile.JPG" style = "'+imgCss+'">')
+}
+
+function logOut(){
+    $("div.userHoverInfo").remove()
+    $('header > .infoRight > .userProfile').css({"display":"none"})
+    $('header > .infoRight > a').css({"display":"initial"})
+
+}

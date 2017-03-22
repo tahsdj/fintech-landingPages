@@ -13,9 +13,11 @@ header .infoLeft{
 	padding-top:20px;
 }
 header a{
-	padding-left: 25px;
+	margin-left: 25px;
+	margin-top: 5px;
 	font:22px sans-serif;
 	cursor: pointer;
+	line-height: 35px;
 }
 header a:hover{
 	color:#8C8C8C;
@@ -25,15 +27,26 @@ header .infoRight{
 	right: 40px;
 	padding-top: 20px;
 }
-header .infoRight img{
+
+header .infoRight > div{
+	position: relative;
+	float: left;
+	top:4px;
+	left: 0px;
+	width: 181px;
+	height: 40px;
+}
+
+header .infoRight img.search{
 	position: absolute;
 	width: 20px;
 	height: 20px;
 	left:7px;
-	top:25px;
+	top:4px;
 }
 header input[type=text]{
 	border-radius: 10px;
+	top:10px;
 	height: 26px;
     width: 150px;
 	font-size: 20px;
@@ -42,6 +55,20 @@ header input[type=text]{
 	outline: none;
 	padding-left: 30px;
 }
+header .infoRight > a{
+	margin-left: 10px;
+	padding-top: 10px;
+}
+
+header .infoRight > .userProfile{
+	margin-left:39px;
+    border:solid 0.1px #CCCBCA;
+    float:left;
+    width:40px;
+    height:40px;
+    display: none;
+}
+
 #page1{
 	position: absolute;
 	top:0px;
@@ -309,15 +336,15 @@ header input[type=text]{
 
 .login > .userInfo > .fb > img{
 	position: absolute;
-	top:20px;
-	width:60px;
-	height: 60px;
+	top:30px;
+	width:35px;
+	height: 35px;
 }
 
 .login > .userInfo > .google > img{
 	position: absolute;
-	top:20px;
-	left:30px;
+	top:18px;
+	left:20px;
 	width:26px;
 	height: 26px;
 }
@@ -339,4 +366,37 @@ header input[type=text]{
 .login > .userInfo > .divideLine > hr {
    width: 100%;
    margin-top: -10px;
+}
+
+div.userHoverInfo{
+  position: fixed;
+  right:10px;
+  top:70px;
+  width: 250px;
+  height: 243px;
+  background-color: white;
+  border: solid 0.5px #D6D8DA;
+}
+
+div.userHoverInfo ul{
+  list-style: none;
+  margin-top: 0px;
+  width: 100px;
+  height: 160px;
+  padding-left: 10px;
+}
+
+div.userHoverInfo li{
+	display: block;
+	line-height: 60px;
+	width: 200px;
+	height: 60px;
+	font-size: 20px;
+	font-family: Microsoft JhengHei;
+	border-bottom: solid 0.5px #D6D8DA;
+    cursor: pointer;
+}
+
+div.userHoverInfo li:hover{
+   padding-left: 5px;
 }
